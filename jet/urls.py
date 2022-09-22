@@ -1,5 +1,5 @@
 import django
-from django.conf.urls import url
+from django.urls import re_path as url
 
 try:
     from django.views.i18n import JavaScriptCatalog
@@ -42,5 +42,5 @@ urlpatterns = [
 ]
 
 if django.VERSION[:2] < (1, 8):
-    from django.conf.urls import patterns
-    urlpatterns = patterns('', *urlpatterns)
+    from django.urls import re_path
+    urlpatterns = re_path('', *urlpatterns)
