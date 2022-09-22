@@ -18,7 +18,12 @@ from jet.dashboard.modules import DashboardModule
 from oauth2client.client import flow_from_clientsecrets, OAuth2Credentials, AccessTokenRefreshError, Storage
 from django.utils.translation import ugettext_lazy as _
 from django.conf import settings
-from django.utils.encoding import force_text
+try:
+    from django.utils.encoding import force_text
+except:
+    from django.utils.encoding import force_str as force_text
+
+
 
 try:
     from django.utils.encoding import force_unicode
